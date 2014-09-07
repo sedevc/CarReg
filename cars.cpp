@@ -14,11 +14,11 @@ bool cars::setRegnr(string y){ //accessors
 	int tmp13 = 0, tmp46 = 0;
 	char tempChar[6];
 
-	for (int i = 0; i < 6; i++) {
+	for (int i = 0; i < 6; i++) { //convert string to char
 		tempChar[i] = y[i];
 	}
 
-	for (int i = 0; i < 3; i++) {
+	for (int i = 0; i < 3; i++) {			//check if first 3 bytes is a-z or A-Z
 		for (int k = 65; k < 123; k++) {
 			if (k > 90 && k < 97) {
 				continue;
@@ -30,7 +30,7 @@ bool cars::setRegnr(string y){ //accessors
 	}
 
 
-	for (int i = 3; i < 6; i++) {
+	for (int i = 3; i < 6; i++) {			//check if 3 last bytes is 0-9
 		for (int k = 48; k < 58; k++) {
 			if ((int)tempChar[i] == k) {
 				tmp46++;
@@ -38,7 +38,7 @@ bool cars::setRegnr(string y){ //accessors
 		}
 	}
 
-	if (tmp13 != 3 || tmp46 != 3) {
+	if (tmp13 != 3 || tmp46 != 3) {			//check if tempchar cont. 3chars and 3 digit.
 		cout << "     (Wrong format! )" << endl;
 		return false;
 	}
