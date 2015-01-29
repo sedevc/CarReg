@@ -38,5 +38,4 @@ private: //privata variablar.
 
 };
 
-
 #endif
